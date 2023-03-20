@@ -31,15 +31,21 @@ class Planet:
 
 
 class Person:
-    def __init__(self):
-        self.planet = Planet()
+    def __init__(self, city_population, room):
+        self.room = room
+        self.city_population = city_population
 
     def get_person_room(self):
-        return self.planet.get_contry().get_city().get_street().get_room().get_name()
+        return self.room
 
     def get_city_population(self):
-        return self.planet.get_contry().get_city().population()
+        return self.city_population
 
 
 # TODO после выполнения задания попробуйте
 # сделать экземпляр класса person и вызвать новые методы.
+city = City()
+room = Room()
+person = Person(city_population=city.population(), room=room.get_name())
+print(person.get_person_room())
+print(person.get_city_population())
